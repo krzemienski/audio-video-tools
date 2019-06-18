@@ -4,7 +4,7 @@ import argparse
 import mediatools.utilities as util
 import mediatools.imagefile as image
 
-parser = argparse.ArgumentParser(description='Image cropper')
+parser = argparse.ArgumentParser(description='Image shaker')
 parser.add_argument('-i', '--inputfile', required=True, help='Input file to crop')
 parser.add_argument('-o', '--outputfile', required=False, help='Output file to create')
 parser.add_argument('-n', '--slices', required=False, default=10, help='Number of slices')
