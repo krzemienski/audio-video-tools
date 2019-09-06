@@ -28,7 +28,7 @@ class ImageFile(media.MediaFile):
         all_props = self.get_file_properties()
         all_props.update(self.get_image_properties())
         util.logger.debug("Returning image props %s", str(all_props))
-        util.logger.debug("Obj %s" % str(vars(self)))
+        util.logger.debug("Obj %s", str(vars(self)))
         return all_props
 
     def get_specs(self):
@@ -88,7 +88,7 @@ class ImageFile(media.MediaFile):
                     util.logger.debug("Found stream %s", str(stream))
                     self.format = stream['codec_name']
                 except KeyError as e:
-                    util.logger.error(1, "Stream %s has no key %s\n%s" % (str(stream), e.args[0], str(stream)))
+                    util.logger.error("Stream %s has no key %s\n%s", str(stream), e.args[0], str(stream))
 
     def get_image_properties(self):
         self.get_image_specs()
@@ -383,7 +383,7 @@ def posterize(files, posterfile=None, background_color="black", margin=5):
     full_w = (cols*min_w) + (cols+1)*gap
     full_h = (rows*min_h) + (rows+1)*gap
 
-    util.logger.debug("W x H = %d x %d / Gap = %d / c,r = %d, %d => Full W x H = %d x %d" % \
+    util.logger.debug("W x H = %d x %d / Gap = %d / c,r = %d, %d => Full W x H = %d x %d", \
         min_w, min_h, gap, cols, rows, full_w, full_h)
     if background_color == "white":
         bgfile = "white-square.jpg"
